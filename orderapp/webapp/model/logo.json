@@ -1,0 +1,12 @@
+{
+    "data":[
+        {
+            "company":"CGI",
+            "logoPath":"model/cgi.jpg"
+        },
+        {
+            "company":"SAP",
+            "logoPath":"model/logo_sap.png"
+        }        
+    ]
+}

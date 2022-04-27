@@ -1,0 +1,17 @@
+{
+	"mVersionDependency": {
+		"UI5.sap/ca/ui.sap_belize_plus": "1.71.2",
+		"UI5.sap/ca/ui": "1.71.2",
+		"UI5": "1.71.38"
+	},
+	"sEntity": "Theme",
+	"sId": "martinatheme--Contrast",
+	"oExtends": "UI5.sap/ca/ui.sap_belize_plus",
+	"aBundled": [
+		"martinatheme"
+	],
+	"sBuildOptions": "SKIP",
+	"sType": "ABSTRACT",
+	"sThemability": "PRIVATE",
+	"sReleaseStage": "GENERAL_AVAILABILITY"
+}

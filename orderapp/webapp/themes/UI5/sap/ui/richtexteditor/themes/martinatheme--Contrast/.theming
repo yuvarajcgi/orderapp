@@ -1,0 +1,17 @@
+{
+	"mVersionDependency": {
+		"UI5.sap/ui/richtexteditor.sap_belize_plus": "1.71.33",
+		"UI5.sap/ui/richtexteditor": "1.71.33",
+		"UI5": "1.71.38"
+	},
+	"sEntity": "Theme",
+	"sId": "martinatheme--Contrast",
+	"oExtends": "UI5.sap/ui/richtexteditor.sap_belize_plus",
+	"aBundled": [
+		"martinatheme"
+	],
+	"sBuildOptions": "SKIP",
+	"sType": "ABSTRACT",
+	"sThemability": "PRIVATE",
+	"sReleaseStage": "GENERAL_AVAILABILITY"
+}

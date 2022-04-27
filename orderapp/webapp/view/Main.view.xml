@@ -1,0 +1,68 @@
+<mvc:View
+    controllerName="test.orderapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+<App id="app">
+    <pages>
+        <Page id="page" showHeader="true">
+            <customHeader>
+                <Bar>
+                    <contentLeft>
+                        <Image id="cgi" src="{logo>/data/0/logoPath}" alt="{logo>/data/0/company}" height="50px" width="50px"/>
+                        <Text text="{i18n>title}" class="customTitleFont sapUiSmallMarginBegin"/>
+                        <ToolbarSpacer />
+                        <Image id="sap" src="{logo>/data/1/logoPath}" alt="{logo>/data/1/company}" height="50px" width="50px"/>
+                    </contentLeft>
+                </Bar>
+            </customHeader>
+            <content>
+                <Table id="tbl_orders" inset="true" items="{/Orders}"
+                    alternateRowColors="true" class="sapUiLargeMarginEnd"
+                    growing="true" growingThreshold="10">
+                    <columns>
+                        <Column>
+                            <Text text="Order Id"/>
+                        </Column>							
+                        <Column	minScreenWidth="Tablet"	demandPopin="true">
+                            <Text text="Customer Id"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet"	demandPopin="true">
+                            <Text text="Order Date" />
+                        </Column>
+                        <Column minScreenWidth="Tablet"	demandPopin="true">
+                            <Text text="Delivery Date" />
+                        </Column>   
+                        <Column minScreenWidth="Tablet"	demandPopin="true">
+                            <Text text="Freight Charge" />
+                        </Column>    
+                        <Column minScreenWidth="Tablet"	demandPopin="true">
+                            <Text text="Shipping Address" />
+                        </Column>     
+                        <Column minScreenWidth="Tablet"	demandPopin="true">
+                            <Text text="Shipping Country" />
+                        </Column>                                                       
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press="onRowSelect">
+                            <cells>
+                                <Text text="{OrderID}"/>
+                                <Text text="{CustomerID}"/>
+                                <Text width="8em" text="{parts: [{path:'OrderDate'}],
+                                    formatter:'.formatter.toFormattedDate'}"/>
+                                <Text width="8em" text="{parts: [{path:'RequiredDate'}],
+                                    formatter:'.formatter.toFormattedDate'}"/>   
+                                <Text text="{parts: [{path:'Freight'}],
+                                    formatter:'.formatter.set2Decimals'}"/>
+                                <Text width="15em" text="{ShipAddress}&#13;{ShipCity}:{ShipPostalCode}"/>
+                                <Text text="{ShipCountry}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>              
+            </content>
+        </Page>
+    </pages>
+</App>
+</mvc:View>

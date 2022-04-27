@@ -1,0 +1,76 @@
+<mvc:View
+	controllerName="test.orderapp.controller.OrderDetails"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout" 
+    xmlns:core="sap.ui.core"   
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="4"
+>
+        <Page id="page" showHeader="true">
+            <customHeader>
+                <Bar>
+                    <contentLeft>
+                        <Button id="btn_navback" tooltip="Navigate back" press="onNavBack" icon="sap-icon://nav-back"/>
+                        <Text text="{i18n>title_orderDetails}" class="customTitleFont sapUiSmallMarginBegin"/>
+                    </contentLeft>
+                </Bar>
+            </customHeader>
+            <content>
+            <f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="Order Details" 
+                labelSpanXL="3"	labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" 
+                emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Order Id"/>
+                    <Text text="{OrderHDRModel>/OrderID}"/>                                
+                    <Label text="Customer Id"/>
+                    <Text text="{OrderHDRModel>/CustomerID}"/>
+                </f:content>
+            </f:SimpleForm>	
+            <t:Table id="tbl_orderDetails" alternateRowColors="true" width="auto" selectionMode="Single" 
+                title="Ordered Items" 
+                class="sapUiLargeMarginBeginEnd sapUiTinyMarginTop">
+                <t:columns>
+                    <t:Column sortProperty="ProductID"  filterProperty="ProductID">
+                        <t:label>
+                            <Label text="Product Id"></Label>
+                        </t:label>
+                        <t:template>
+                            <Link text="{ProductID}" press="onShowProduct" />
+                        </t:template>
+                    </t:Column>                 
+                    <t:Column sortProperty="UnitPrice">
+                        <t:label>
+                            <Label text="Unit Price"></Label>
+                        </t:label>
+                        <t:template>
+                            <Text text="{parts:[{path:'UnitPrice'}],
+                                    formatter: '.formatter.set2Decimals'}"/>
+                        </t:template>
+                    </t:Column>
+                    <t:Column >
+                        <t:label>
+                            <Label text="Quantity"></Label>
+                        </t:label>
+                        <t:template>
+                            <Text text="{Quantity}"/>
+                        </t:template>
+                    </t:Column>
+                     <t:Column >
+                        <t:label>
+                            <Label text="Total"></Label>
+                        </t:label>
+                        <t:template>
+                            <Text text="{= ${UnitPrice} * ${Quantity} }"/>
+                        </t:template>
+                    </t:Column>                   
+                </t:columns>
+            </t:Table>   
+            <core:Fragment id="frag_prodDetail" fragmentName="test.orderapp.view.fragment.ProductDetail" type="XML" />                     
+            </content>
+        </Page>
+</mvc:View>

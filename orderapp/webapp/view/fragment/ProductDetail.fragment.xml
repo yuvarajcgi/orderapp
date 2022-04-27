@@ -1,0 +1,83 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<!-- <Dialog id="dlg_prodDetail" title="Product Details"> -->
+    <!-- <content> -->
+            <f:SimpleForm id="SF_ProdDetail" title="Product Details" editable="false" layout="ResponsiveGridLayout" 
+                labelSpanXL="2" labelSpanL="2" labelSpanM="2" labelSpanS="12" adjustLabelSpan="false" 
+                columnsXL="8" columnsL="8" columnsM="8" 
+                emptySpanXL="2" emptySpanL="2" emptySpanM="2" emptySpanS="0" 
+                singleContainerFullSize="true">
+                <Label text="Product Id"></Label>
+                <Text text="{ProductModel>/ProductID}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Product Name">
+                    <layoutData><l:GridData span="XL2 L2 M2"/></layoutData>
+                </Label>
+                <Text text="{ProductModel>/ProductName}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Product Category"></Label>
+                <Text text="{CategoryModel>/CategoryName}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Product Description">
+                    <layoutData><l:GridData span="XL2 L2 M2"/></layoutData>
+                </Label>
+                <Text text="{CategoryModel>/Description}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>       
+                <Label text="Quantity Per Unit"></Label>
+                <Text text="{ProductModel>/QuantityPerUnit}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Unit Price">
+                    <layoutData><l:GridData span="XL2 L2 M2"/></layoutData>
+                </Label>
+                <Text text="{ProductModel>/UnitPrice}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+            </f:SimpleForm>	   
+            <f:SimpleForm id="SF_SupplierInfo" title="Supplier Info" editable="false" layout="ResponsiveGridLayout" 
+                labelSpanXL="2" labelSpanL="2" labelSpanM="2" labelSpanS="12" adjustLabelSpan="false" 
+                columnsXL="8" columnsL="8" columnsM="8" 
+                emptySpanXL="2" emptySpanL="2" emptySpanM="2" emptySpanS="0" 
+                singleContainerFullSize="true">
+                <Label text="Supplier Id"></Label>
+                <Text text="{SupplierModel>/SupplierID}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Company Name">
+                    <layoutData><l:GridData span="XL2 L2 M2"/></layoutData>
+                </Label>
+                <Text text="{SupplierModel>/CompanyName}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Contact Name"></Label>
+                <Text text="{SupplierModel>/ContactName}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Designation">
+                    <layoutData><l:GridData span="XL2 L2 M2"/></layoutData>
+                </Label>
+                <Text text="{SupplierModel>/ContactTitle}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>       
+                <Label text="Address"></Label>
+                <Text text="{SupplierModel>/Address}, &#13; 
+                        {SupplierModel>/City} - {SupplierModel>/PostalCode}, &#13; 
+                        {SupplierModel>/Country}.">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+                <Label text="Phone">
+                    <layoutData><l:GridData span="XL2 L2 M2"/></layoutData>
+                </Label>
+                <Text text="{SupplierModel>/Phone}">
+                    <layoutData><l:GridData span="XL3 L3 M3"/></layoutData>
+                </Text>
+            </f:SimpleForm> 
+    <!-- </content> -->
+    <!-- <endButton>
+        <Button text="Close" press="onCloseProdDetail"/>
+    </endButton>
+    </Dialog> -->
+</core:FragmentDefinition>
